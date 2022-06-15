@@ -3,23 +3,31 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <properties resource="db.properties"> <!--ссылка на файл со свойствами(ссылка на СУБД, логин, пароль и тп.)-->
-    </properties>
-    <settings><!--в данном блоке можно настроить много параметров. Полный список параметров http://mybatis.github.io/mybatis-3/configuration.html#settings-->
-        <setting name="logImpl" value="LOG4J"/>
+    <properties resource="db.properties"/>
+
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="cacheEnabled" value="true"/>
     </settings>
-    <environments default="development"><!--в данном блоке настраиваются подключения к БД-->
+
+    <typeAliases>
+        <typeAlias alias="user" type="com.company.entity.User"/>
+    </typeAliases>
+
+    <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
+                <property name="driver" value="${db.driver}"/>
                 <property name="url" value="${db.url}"/>
                 <property name="username" value="${db.username}"/>
                 <property name="password" value="${db.password}"/>
             </dataSource>
         </environment>
     </environments>
-    <mappers><!--в данном блоке необходимо описать маперы, которые используются в проекте-->
-        <mapper class="com.company.DAO.IUserDAO"/>
-        <mapper class="com.company.DAO.IRoleDAO "/>
+
+    <mappers>
+        <mapper resource="mapper\UserMapper.xml"/>
     </mappers>
 </configuration>

@@ -48,6 +48,11 @@ public class User implements IUserDAO {
         this.roles = idRole;
     }
 
+    public User(Integer idUser, String userName) {
+        this.idUser = idUser;
+        this.userName = userName;
+    }
+
     public User(Integer id , String userName, String password, String email, Date createdAt, Date updatedAt,
                 String phoneNumber) {
         this.idUser = id;

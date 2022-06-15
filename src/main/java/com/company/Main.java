@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.entity.Role;
 import com.company.entity.User;
+import com.company.mybatis.UserMapperTest;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.JavaType;
@@ -15,21 +16,20 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        String filepath = "result.xml";
-        User user = new User();
-        Role role = new Role(2,"admin");
-        User userAdd = new User(4,"roman2","roman2","roman2@chnu", Date.valueOf("2022-04-05"),
-                Date.valueOf("2022-04-05"),"+380996440686",new ArrayList<Role>(
-                Collections.singletonList(role.getById(1))
-        ));
-                //)
+//        String filepath = "result.xml";
+//        User user = new User();
+//        Role role = new Role(2,"admin");
+//        User userAdd = new User(4,"roman2","roman2","roman2@chnu", Date.valueOf("2022-04-05"),
+//                Date.valueOf("2022-04-05"),"+380996440686",new ArrayList<Role>(
+//                Collections.singletonList(role.getById(1))
+//        ));
+//
 //        try {
 //            JAXBContext context = JAXBContext.newInstance(User.class);
 //            Marshaller marshaller = context.createMarshaller();
@@ -42,7 +42,7 @@ public class Main {
 //            e.printStackTrace();
 //        }
 //        user.delete(4);
-        //user.add(userAdd);
+//        user.add(userAdd);
 //        ObjectMapper om = new ObjectMapper();
 //        List<User> users = user.getAll();
 //        File file = new File("result.json");
@@ -60,6 +60,11 @@ public class Main {
 //        JavaType type = om.getTypeFactory().constructCollectionType(List.class,User.class);
 //        List<User> user1s =  om.readValue(file,type);
 //        System.out.println(user1s);
+
+        UserMapperTest userMapperTest = new UserMapperTest();
+        userMapperTest.beforeTest();
+        userMapperTest.testGetAll();
+        userMapperTest.setAfter();
 
     }
 }
