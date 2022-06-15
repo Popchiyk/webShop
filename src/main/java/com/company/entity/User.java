@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.io.FileReader;
 import java.sql.*;
 import java.sql.Date;
 import java.util.*;
@@ -20,7 +21,7 @@ public class User implements IUserDAO {
 
     static final String url = "jdbc:mysql://localhost:3306/website";
     static final String login ="root";
-    static final String passwordDb = "12345";
+    static final String passwordDb = "root";
 
     private Integer idUser;
     private String userName;

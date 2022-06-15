@@ -18,7 +18,7 @@ public class Role implements IRoleDAO {
 
     static final String url = "jdbc:mysql://localhost:3306/website";
     static final String login ="root";
-    static final String passwordDb = "12345";
+    static final String passwordDb = "root";
     private Integer idRole;
     private String name;
 

@@ -23,12 +23,12 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 //        String filepath = "result.xml";
-//        User user = new User();
-//        Role role = new Role(2,"admin");
-//        User userAdd = new User(4,"roman2","roman2","roman2@chnu", Date.valueOf("2022-04-05"),
-//                Date.valueOf("2022-04-05"),"+380996440686",new ArrayList<Role>(
-//                Collections.singletonList(role.getById(1))
-//        ));
+        User user = new User();
+        Role role = new Role(1,"admin");
+        User userAdd = new User(1,"roman2","roman2","roman2@chnu", Date.valueOf("2022-04-05"),
+                Date.valueOf("2022-04-05"),"+380996440686",new ArrayList<Role>(
+                Collections.singletonList(role.getById(1))
+        ));
 //
 //        try {
 //            JAXBContext context = JAXBContext.newInstance(User.class);
