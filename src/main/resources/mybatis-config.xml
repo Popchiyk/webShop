@@ -12,7 +12,7 @@
     </settings>
 
     <typeAliases>
-        <typeAlias alias="user" type="com.company.entity.User"/>
+        <typeAlias alias="user" type="com.company.mybatis.UserBatis"/>
     </typeAliases>
 
     <environments default="development">

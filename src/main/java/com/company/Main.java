@@ -25,7 +25,7 @@ public class Main {
 //        String filepath = "result.xml";
         User user = new User();
         Role role = new Role(1,"admin");
-        User userAdd = new User(1,"roman2","roman2","roman2@chnu", Date.valueOf("2022-04-05"),
+        User userAdd = new User(2,"roman1","roman2","roman3@chnu", Date.valueOf("2022-04-05"),
                 Date.valueOf("2022-04-05"),"+380996440686",new ArrayList<Role>(
                 Collections.singletonList(role.getById(1))
         ));
@@ -42,7 +42,7 @@ public class Main {
 //            e.printStackTrace();
 //        }
 //        user.delete(4);
-//        user.add(userAdd);
+        //user.add(userAdd);
 //        ObjectMapper om = new ObjectMapper();
 //        List<User> users = user.getAll();
 //        File file = new File("result.json");
@@ -64,7 +64,6 @@ public class Main {
         UserMapperTest userMapperTest = new UserMapperTest();
         userMapperTest.beforeTest();
         userMapperTest.testGetAll();
-        userMapperTest.setAfter();
 
     }
 }
